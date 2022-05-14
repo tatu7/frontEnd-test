@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+nav {
+  background-color: beige;
+  height: 10vh;
+  font-size: 2.1rem;
+  ul {
+    display: flex;
+    align-items: center;
+    padding-top: 1.4rem;
+    li {
+      list-style: none;
+      margin-left: 3rem;
+    }
+  }
+}
+.active {
+  color: red;
+}
