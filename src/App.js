@@ -1,33 +1,28 @@
-import { NavLink, Route, Routes } from "react-router-dom";
-import "./App.css";
-import Ortacha from "./ortachaVazifa/Ortacha";
-import OsonApp from "./OsonVazifa/OsonApp";
-import About from "./OsonVazifa/Pages/About/About";
-import Blog from "./OsonVazifa/Pages/Blog/Blog";
-import Home from "./OsonVazifa/Pages/Home/Home";
-import Profile from "./OsonVazifa/Pages/Profile/Profile";
+import { ThemeProvider } from "@emotion/react";
 
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import About from "./component/About/About";
+import Contact from "./component/Contact/Contact";
+import Home from "./component/Home/Home";
+import Revolutions from "./component/Revolutions/Revolutions";
+import Services from "./component/Services/Services";
+import Header from "./component/UI/Header";
+import theme from "./component/UI/Theme";
 function App() {
   return (
-    <div className="App">
-      <NavLink
-        to="osonvazifa"
-        style={{ fontSize: "2rem", marginRight: "1.2rem" }}
-      >
-        OsonApp
-      </NavLink>
-      <NavLink to="ortachavazifa" style={{ fontSize: "2rem" }}>
-        OrtachaApp
-      </NavLink>
-      <Routes>
-        <Route path="/osonvazifa" element={<OsonApp />} />
-        <Route path="/ortachavazifa" element={<Ortacha />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/resolutions" element={<Revolutions />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </ThemeProvider>
+    </>
   );
 }
 
